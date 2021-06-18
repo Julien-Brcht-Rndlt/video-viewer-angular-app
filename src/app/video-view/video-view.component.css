@@ -1,0 +1,6 @@
+.video-box {
+  height: 250px;
+  width: 250px;
+  border: 2px solid #5d5d5d;
+  border-radius: 50%;
+}
