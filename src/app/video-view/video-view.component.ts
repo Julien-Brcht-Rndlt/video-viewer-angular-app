@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VideoViewComponent implements OnInit {
   title: string = 'View Video';
+  url = '';
 
   constructor() {}
 
