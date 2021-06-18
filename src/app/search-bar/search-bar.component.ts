@@ -8,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class SearchBarComponent implements OnInit {
   title: string = 'Search Bar';
   label: string = 'search for your video:';
-  url: string = '';
+  url = '';
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  search(): void {
+    console.log(`search video ${this.url} to display`);
+  }
 }
