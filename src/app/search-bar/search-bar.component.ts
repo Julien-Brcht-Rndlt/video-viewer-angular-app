@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Video } from '../models/video';
+
 @Component({
   selector: 'searchBar',
   templateUrl: './search-bar.component.html',
@@ -8,13 +10,15 @@ import { Component, OnInit } from '@angular/core';
 export class SearchBarComponent implements OnInit {
   title: string = 'Search Bar';
   label: string = 'search for your video:';
-  url = '';
+
+  video: Video = new Video('');
 
   constructor() {}
 
   ngOnInit(): void {}
 
   search(): void {
-    console.log(`search video ${this.url} to display`);
+    console.log(this.video);
+    console.log(`search video ${this.video.url} to display`);
   }
 }
