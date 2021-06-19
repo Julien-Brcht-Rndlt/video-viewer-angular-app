@@ -22,9 +22,13 @@ export class BookmarksComponent implements OnInit {
 
   bookmark() {
     if (this.playingVideo) {
-      this.bookmarks.push(this.playingVideo);
+      this.bookmarks.push({ ...this.playingVideo });
       console.log('bookmarks', this.bookmarks);
     }
+  }
+
+  showBookmarks() {
+    this.show = true;
   }
 
   ngOnInit(): void {}

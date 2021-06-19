@@ -1,8 +1,15 @@
 <h2>{{ title }}</h2>
-<div>
-  <ul>
-    <li>...</li>
+<div class="bookmarks-list" *ngIf="show; else noDisplay">
+  <ul *ngFor="let video of bookmarks">
+    <li>
+      {{ video.url }}
+    </li>
   </ul>
+</div>
+<ng-template #noDisplay>
+  <p>click on see Bookmarks to see yours!</p>
+</ng-template>
+<div>
   <button (click)="bookmark()">add +</button>
-  <button>see Bookmarks</button>
+  <button (click)="showBookmarks()">see Bookmarks</button>
 </div>
