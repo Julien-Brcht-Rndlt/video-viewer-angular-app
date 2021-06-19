@@ -2,7 +2,7 @@
 <div class="history-list" *ngIf="videoHistory.length; else noHistory">
   <ul *ngFor="let video of videoHistory">
     <li>
-      <a href="">{{ video.url }}</a>
+      <a (click)="play(video)">{{ video.url }}</a>
     </li>
   </ul>
 </div>

@@ -13,12 +13,19 @@ export class AppComponent {
   video: Video = { url: '', urlId: '', played: false };
   history: Array<Video> = [];
 
-  receivePlayedVideo($event: Video) {
+  receiveSearchedVideo($event: Video) {
     console.log('event value: ', $event);
     if ($event) {
       this.video = $event;
       const historyVideo = { ...this.video };
       this.history.push(historyVideo);
+    }
+  }
+
+  receiveHistorizedVideo($event: Video) {
+    console.log('event value: ', $event);
+    if ($event) {
+      this.video = $event;
     }
   }
 }
