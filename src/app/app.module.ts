@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-
+import { YouTubePlayerModule } from '@angular/youtube-player';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -18,7 +18,7 @@ import { BookmarksComponent } from './bookmarks/bookmarks.component';
     HistoryComponent,
     BookmarksComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, YouTubePlayerModule],
   providers: [],
   bootstrap: [AppComponent],
 })
