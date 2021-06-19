@@ -1,6 +1,6 @@
 <h2>{{ title }}</h2>
-<div class="video-stream" *ngIf="urlVideo; else noUrl">
-  show video {{ urlVideo }}
-  <youtube-player videoId="fQDEUU1lyZQ"></youtube-player>
+<div class="video-stream" *ngIf="videoId; else noUrl">
+  show video with id: {{ videoId }}
+  <youtube-player videoId="videoId"></youtube-player>
 </div>
 <ng-template #noUrl><div class="video-box">no choice yet..</div></ng-template>
