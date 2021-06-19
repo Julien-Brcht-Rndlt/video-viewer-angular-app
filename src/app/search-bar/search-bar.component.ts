@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { Video } from '../models/video';
 
@@ -13,12 +13,20 @@ export class SearchBarComponent implements OnInit {
 
   video: Video = { url: '', played: false };
 
+  @Output()
+  videoChange: EventEmitter<string> = new EventEmitter<string>();
+
   constructor() {}
 
   ngOnInit(): void {}
 
+  sendDataToParent() {
+    this.videoChange.emit(this.video.url);
+  }
+
   search(): void {
     console.log(this.video);
     console.log(`search video ${this.video.url} to display`);
+    this.sendDataToParent();
   }
 }

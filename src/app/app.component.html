@@ -1,5 +1,5 @@
 <h1>{{ title }}</h1>
-<searchBar></searchBar>
-<videoView></videoView>
+<searchBar (videoChange)="receivePlayedVideo($event)"></searchBar>
+<videoView [urlVideo]="video.url"></videoView>
 <History></History>
 <Bookmarks></Bookmarks>

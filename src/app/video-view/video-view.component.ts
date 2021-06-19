@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { Video } from '../models/video';
 
@@ -14,6 +14,9 @@ export class VideoViewComponent implements OnInit {
   url = ''; */
 
   video: Video = { url: '', played: false };
+
+  @Input()
+  urlVideo: string = '';
 
   constructor() {}
 
