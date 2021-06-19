@@ -14,7 +14,7 @@ export class VideoViewComponent implements OnInit {
   /* hasUrl: boolean = false;
   url = ''; */
 
-  video: Video = { url: '', played: false };
+  video: Video = { url: '', urlId: '', played: false };
 
   @Input()
   urlVideo: string = '';

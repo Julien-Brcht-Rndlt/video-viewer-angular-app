@@ -1,3 +1,7 @@
 export class Video {
-  constructor(public url: string, public played: boolean) {}
+  constructor(
+    public url: string,
+    public urlId: string,
+    public played: boolean
+  ) {}
 }

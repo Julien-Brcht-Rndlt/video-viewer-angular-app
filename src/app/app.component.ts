@@ -10,10 +10,10 @@ import { Video } from './models/video';
 export class AppComponent {
   title = 'Video Viewer App';
 
-  video: Video = { url: '', played: false };
+  video: Video = { url: '', urlId: '', played: false };
 
   receivePlayedVideo($event: string) {
     console.log('event value: ' + $event);
-    this.video.url = $event;
+    this.video.urlId = $event;
   }
 }
