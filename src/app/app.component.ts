@@ -12,8 +12,8 @@ export class AppComponent {
 
   video: Video = { url: '', urlId: '', played: false };
 
-  receivePlayedVideo($event: string) {
-    console.log('event value: ' + $event);
-    this.video.urlId = $event;
+  receivePlayedVideo($event: Video) {
+    console.log('event value: ', $event);
+    this.video = $event;
   }
 }

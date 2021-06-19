@@ -14,7 +14,7 @@ export class SearchBarComponent implements OnInit {
   video: Video = { url: '', urlId: '', played: false };
 
   @Output()
-  videoChange: EventEmitter<string> = new EventEmitter<string>();
+  videoChange: EventEmitter<Video> = new EventEmitter<Video>();
 
   constructor() {}
 
@@ -30,7 +30,7 @@ export class SearchBarComponent implements OnInit {
   sendDataToParent() {
     this.video.urlId = this.parseUrlIdFromYoutubeUrl(this.video.url);
     console.log(`video urlId ${this.video.urlId}`);
-    this.videoChange.emit(this.video.urlId);
+    this.videoChange.emit(this.video);
   }
 
   search(): void {
