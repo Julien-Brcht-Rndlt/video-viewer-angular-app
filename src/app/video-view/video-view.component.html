@@ -1,5 +1,5 @@
 <h2>{{ title }}</h2>
-<div class="video-stream" *ngIf="video.played; else noUrl">
-  show video {{ video.url }}
+<div class="video-stream" *ngIf="urlVideo; else noUrl">
+  show video {{ urlVideo }}
 </div>
 <ng-template #noUrl><div class="video-box">no choice yet..</div></ng-template>
