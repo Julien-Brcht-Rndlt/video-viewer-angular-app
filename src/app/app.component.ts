@@ -11,9 +11,14 @@ export class AppComponent {
   title = 'Video Viewer App';
 
   video: Video = { url: '', urlId: '', played: false };
+  history: Array<Video> = [];
 
   receivePlayedVideo($event: Video) {
     console.log('event value: ', $event);
-    this.video = $event;
+    if ($event) {
+      this.video = $event;
+      const historyVideo = { ...this.video };
+      this.history.push(historyVideo);
+    }
   }
 }

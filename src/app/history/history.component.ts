@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Video } from '../models/video';
 
 @Component({
   selector: 'History',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistoryComponent implements OnInit {
   title: string = 'History List';
+
   constructor() {}
+
+  @Input()
+  videoHistory: Array<Video> = [];
 
   ngOnInit(): void {}
 }

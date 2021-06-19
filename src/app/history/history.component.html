@@ -1,7 +1,11 @@
 <h2>{{ title }}</h2>
-<div class="history-list">
-  <ul>
-    <li></li>
+<div class="history-list" *ngIf="videoHistory.length; else noHistory">
+  <ul *ngFor="let video of videoHistory">
+    <li>
+      <a href="">{{ video.url }}</a>
+    </li>
   </ul>
-  <span>no history..</span>
 </div>
+<ng-template #noHistory>
+  <p>no history..</p>
+</ng-template>
