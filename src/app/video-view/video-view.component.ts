@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
+import { VideoPlayerService } from '../services/video-player.service';
+import { Subscription } from 'rxjs';
+
+import { Video } from '../models/video';
+
 @Component({
   selector: 'videoView',
   templateUrl: './video-view.component.html',
@@ -8,10 +13,26 @@ import { Component, OnInit } from '@angular/core';
 export class VideoViewComponent implements OnInit {
   title: string = 'View Video';
 
-  hasUrl: boolean = false;
-  url = '';
+  playVideo: boolean = false;
 
-  constructor() {}
+  constructor(
+    public video: Video,
+    public videoPlayerService: VideoPlayerService,
+    private subscription: Subscription
+  ) {
+    /* this.videoPlayerService.playedVideo.subscribe((video) => {
+      this.video = video;
+      this.playVideo = true;
+    }); */
+  }
 
-  ngOnInit(): void {}
+  ngOnInit() {
+    this.subscription = this.videoPlayerService.playedVideo.subscribe(
+      (video) => (this.video = video)
+    );
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
 }

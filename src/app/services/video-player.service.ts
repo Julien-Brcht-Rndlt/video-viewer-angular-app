@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Video } from '../models/video';
-//import { Subject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -8,11 +8,12 @@ import { Video } from '../models/video';
 export class VideoPlayerService {
   constructor(private video: Video) {}
 
-  public announcePlayingVideo(): Video {
-    return this.video;
-  }
+  // Observable sources
+  private playedVideoSource = new BehaviorSubject<Video>(this.video);
+  // Observable streams
+  playedVideo = this.playedVideoSource.asObservable();
 
-  public registerPlayingVideo(video: Video) {
-    this.video = video;
+  announcePlayingVideo(video: Video) {
+    this.playedVideoSource.next(video);
   }
 }
