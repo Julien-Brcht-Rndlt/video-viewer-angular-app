@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Video } from '../models/video';
+
 @Component({
   selector: 'videoView',
   templateUrl: './video-view.component.html',
@@ -8,8 +10,10 @@ import { Component, OnInit } from '@angular/core';
 export class VideoViewComponent implements OnInit {
   title: string = 'View Video';
 
-  hasUrl: boolean = false;
-  url = '';
+  /* hasUrl: boolean = false;
+  url = ''; */
+
+  video: Video = { url: '', played: false };
 
   constructor() {}
 

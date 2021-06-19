@@ -11,7 +11,7 @@ export class SearchBarComponent implements OnInit {
   title: string = 'Search Bar';
   label: string = 'search for your video:';
 
-  video: Video = new Video('');
+  video: Video = { url: '', played: false };
 
   constructor() {}
 

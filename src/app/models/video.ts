@@ -1,5 +1,3 @@
 export class Video {
-  constructor(public url: string) {
-    this.url = url;
-  }
+  constructor(public url: string, public played: boolean) {}
 }
