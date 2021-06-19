@@ -5,4 +5,4 @@
   [videoHistory]="history"
   (videoChange)="receiveHistorizedVideo($event)"
 ></History>
-<Bookmarks></Bookmarks>
+<Bookmarks [playingVideo]="video"></Bookmarks>
