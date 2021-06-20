@@ -32,7 +32,7 @@ export class AppComponent {
       console.log('isHistorized: ', this.isHistorized(historyVideo));
       if (!this.isHistorized(historyVideo)) {
         this.history.push(historyVideo);
-        this.videoPersistService.saveVideoHistory(this.history);
+        //this.videoPersistService.saveVideoHistory(this.history);
       }
     }
   }
