@@ -1,6 +1,6 @@
 <h2>{{ title }}</h2>
 <div>
   <label for="search">{{ label }}</label>
-  <input id="search" type="text" [(ngModel)]="video.url" />
+  <input id="search" #url type="text" [(ngModel)]="video.url" required />
   <button (click)="search()">search</button>
 </div>
