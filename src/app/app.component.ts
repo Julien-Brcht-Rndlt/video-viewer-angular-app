@@ -13,12 +13,19 @@ export class AppComponent {
   video: Video = { url: '', urlId: '', played: false };
   history: Array<Video> = [];
 
+  private isHistorized(video: Video): boolean {
+    return this.history.filter((v) => v.urlId === video.urlId).length > 0;
+  }
+
   receiveSearchedVideo($event: Video) {
     console.log('event value: ', $event);
     if ($event) {
       this.video = $event;
       const historyVideo = { ...this.video };
-      this.history.push(historyVideo);
+      console.log('isHistorized: ', this.isHistorized(historyVideo));
+      if (!this.isHistorized(historyVideo)) {
+        this.history.push(historyVideo);
+      }
     }
   }
 
