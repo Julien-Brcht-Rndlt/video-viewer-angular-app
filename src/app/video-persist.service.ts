@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 
 import { Video } from './models/video';
 
-@Injectable({
+@Injectable(/* {
   providedIn: 'root',
-})
+} */)
 export class VideoPersistService {
   constructor(public localStorage: Storage) {
     this.localStorage = window.localStorage;
