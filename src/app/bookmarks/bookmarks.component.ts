@@ -22,8 +22,13 @@ export class BookmarksComponent implements OnInit {
   @Input()
   playingVideo: Video = { url: '', urlId: '', played: false };
 
+  private isBookmarked(video: Video): boolean {
+    return this.bookmarks.filter((v) => v.urlId === video.urlId).length > 0;
+  }
+
   bookmark() {
-    if (this.playingVideo) {
+    console.log('isBookmarked', this.isBookmarked(this.playingVideo));
+    if (this.playingVideo && !this.isBookmarked(this.playingVideo)) {
       this.bookmarks.push({ ...this.playingVideo });
       console.log('bookmarks', this.bookmarks);
       /*  this.videoPersistService.saveVideoBoomarks(this.bookmarks); */
