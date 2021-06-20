@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Inject, Input, OnInit } from '@angular/core';
+import { LOCAL_STORAGE } from 'ngx-webstorage-service';
 
 import { Video } from '../models/video';
 
@@ -8,6 +9,7 @@ import { VideoPersistService } from '../video-persist.service';
   selector: 'Bookmarks',
   templateUrl: './bookmarks.component.html',
   styleUrls: ['./bookmarks.component.css'],
+  providers: [VideoPersistService],
 })
 export class BookmarksComponent implements OnInit {
   title: string = 'Your Bookmarks';
@@ -17,7 +19,9 @@ export class BookmarksComponent implements OnInit {
 
   bookmarks: Array<Video> = [];
 
-  constructor(/* private videoPersistService: VideoPersistService */) {}
+  constructor(
+    @Inject(LOCAL_STORAGE) private videoPersistService: VideoPersistService
+  ) {}
 
   @Input()
   playingVideo: Video = { url: '', urlId: '' };
@@ -31,7 +35,7 @@ export class BookmarksComponent implements OnInit {
     if (this.playingVideo && !this.isBookmarked(this.playingVideo)) {
       this.bookmarks.push({ ...this.playingVideo });
       console.log('bookmarks', this.bookmarks);
-      /*  this.videoPersistService.saveVideoBoomarks(this.bookmarks); */
+      this.videoPersistService.saveVideoBoomarks(this.bookmarks);
     }
   }
 
@@ -44,7 +48,7 @@ export class BookmarksComponent implements OnInit {
   }
 
   getVideoBookmarks() {
-    /* this.bookmarks = this.videoPersistService.getVideoBoomarks(); */
+    //this.bookmarks = this.videoPersistService.getVideoBoomarks();
   }
 
   ngOnInit(): void {
