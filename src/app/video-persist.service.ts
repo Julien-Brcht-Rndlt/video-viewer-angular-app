@@ -42,7 +42,7 @@ export class VideoPersistService {
     return this.setVideos('history', videos);
   }
 
-  removeVideoHistory() {
+  removeVideoHistory(): boolean {
     return this.removeVideos('history');
   }
 
@@ -54,7 +54,7 @@ export class VideoPersistService {
     return this.setVideos('bookmarks', videos);
   }
 
-  removeVideoBookmarks() {
+  removeVideoBookmarks(): boolean {
     return this.removeVideos('bookmarks');
   }
 }
