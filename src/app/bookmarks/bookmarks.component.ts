@@ -20,7 +20,7 @@ export class BookmarksComponent implements OnInit {
   constructor(/* private videoPersistService: VideoPersistService */) {}
 
   @Input()
-  playingVideo: Video = { url: '', urlId: '', played: false };
+  playingVideo: Video = { url: '', urlId: '' };
 
   private isBookmarked(video: Video): boolean {
     return this.bookmarks.filter((v) => v.urlId === video.urlId).length > 0;

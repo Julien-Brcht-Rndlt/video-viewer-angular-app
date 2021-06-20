@@ -17,7 +17,7 @@ export class SearchBarComponent implements OnInit {
   title: string = 'Search Bar';
   label: string = 'search for your video:';
 
-  video: Video = { url: '', urlId: '', played: false };
+  video: Video = { url: '', urlId: '' };
 
   @Output()
   videoChange: EventEmitter<Video> = new EventEmitter<Video>();

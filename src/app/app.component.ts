@@ -10,7 +10,7 @@ import { Video } from './models/video';
 export class AppComponent {
   title = 'Video Viewer App';
 
-  video: Video = { url: '', urlId: '', played: false };
+  video: Video = { url: '', urlId: '' };
   history: Array<Video> = [];
 
   private isHistorized(video: Video): boolean {
