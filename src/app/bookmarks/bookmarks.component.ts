@@ -2,6 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 
 import { Video } from '../models/video';
 
+import { VideoStoringService } from '../video-storing.service';
+
 @Component({
   selector: 'Bookmarks',
   templateUrl: './bookmarks.component.html',
@@ -15,7 +17,7 @@ export class BookmarksComponent implements OnInit {
 
   bookmarks: Array<Video> = [];
 
-  constructor() {}
+  constructor(private videoStoringService: VideoStoringService) {}
 
   @Input()
   playingVideo: Video = { url: '', urlId: '', played: false };
@@ -31,5 +33,11 @@ export class BookmarksComponent implements OnInit {
     this.show = true;
   }
 
-  ngOnInit(): void {}
+  getVideoBookmarks() {
+    this.bookmarks = this.videoStoringService.getVideoBoomarks();
+  }
+
+  ngOnInit(): void {
+    this.getVideoBookmarks();
+  }
 }

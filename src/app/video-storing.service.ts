@@ -1,12 +1,18 @@
 import { Injectable } from '@angular/core';
 
+import { Video } from './models/video';
+
 @Injectable({
   providedIn: 'root',
 })
 export class VideoStoringService {
   constructor() {}
 
-  getVideoHistory() {}
+  getVideoHistory(): Array<Video> {
+    return [];
+  }
 
-  getVideoBoomarks() {}
+  getVideoBoomarks(): Array<Video> {
+    return [];
+  }
 }
