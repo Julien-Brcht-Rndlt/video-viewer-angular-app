@@ -35,7 +35,7 @@ export class BookmarksComponent implements OnInit {
     if (this.playingVideo && !this.isBookmarked(this.playingVideo)) {
       this.bookmarks.push({ ...this.playingVideo });
       console.log('bookmarks', this.bookmarks);
-      this.videoPersistService.saveVideoBoomarks(this.bookmarks);
+      //this.videoPersistService.saveVideoBoomarks(this.bookmarks);
     }
   }
 
