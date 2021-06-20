@@ -17,7 +17,7 @@ export class BookmarksComponent implements OnInit {
 
   bookmarks: Array<Video> = [];
 
-  constructor(private videoPersistService: VideoPersistService) {}
+  constructor(/* private videoPersistService: VideoPersistService */) {}
 
   @Input()
   playingVideo: Video = { url: '', urlId: '', played: false };
@@ -32,6 +32,10 @@ export class BookmarksComponent implements OnInit {
 
   showBookmarks() {
     this.show = true;
+  }
+
+  getTotalBookmarks() {
+    return this.bookmarks.length;
   }
 
   getVideoBookmarks() {

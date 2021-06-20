@@ -1,4 +1,4 @@
-<h2>{{ title }}</h2>
+<h2>{{ title }} (currently {{ getTotalBookmarks() }} video urls)</h2>
 <div class="bookmarks-list" *ngIf="show; else noDisplay">
   <ul *ngFor="let video of bookmarks">
     <li>
