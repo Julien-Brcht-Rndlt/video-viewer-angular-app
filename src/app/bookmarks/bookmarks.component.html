@@ -1,1 +1,15 @@
-<div>Bookmarks +</div>
+<h2>{{ title }} (currently {{ getTotalBookmarks() }} video urls)</h2>
+<div class="bookmarks-list" *ngIf="show; else noDisplay">
+  <ul *ngFor="let video of bookmarks">
+    <li>
+      {{ video.url }}
+    </li>
+  </ul>
+</div>
+<ng-template #noDisplay>
+  <p>click on see Bookmarks to see yours!</p>
+</ng-template>
+<div>
+  <button (click)="bookmark()">add +</button>
+  <button (click)="showBookmarks()">see Bookmarks</button>
+</div>
