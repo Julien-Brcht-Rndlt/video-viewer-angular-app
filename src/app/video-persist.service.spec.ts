@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { VideoStoringService } from './video-storing.service';
+import { VideoPersistService } from './video-persist.service';
 
-describe('VideoStoringService', () => {
-  let service: VideoStoringService;
+describe('VideoPersistService', () => {
+  let service: VideoPersistService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(VideoStoringService);
+    service = TestBed.inject(VideoPersistService);
   });
 
   it('should be created', () => {

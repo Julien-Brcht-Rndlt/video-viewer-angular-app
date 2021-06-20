@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 
 import { Video } from '../models/video';
 
-import { VideoStoringService } from '../video-storing.service';
+import { VideoPersistService } from '../video-persist.service';
 
 @Component({
   selector: 'Bookmarks',
@@ -17,7 +17,7 @@ export class BookmarksComponent implements OnInit {
 
   bookmarks: Array<Video> = [];
 
-  constructor(private videoStoringService: VideoStoringService) {}
+  constructor(private videoPersistService: VideoPersistService) {}
 
   @Input()
   playingVideo: Video = { url: '', urlId: '', played: false };
@@ -26,6 +26,7 @@ export class BookmarksComponent implements OnInit {
     if (this.playingVideo) {
       this.bookmarks.push({ ...this.playingVideo });
       console.log('bookmarks', this.bookmarks);
+      /*  this.videoPersistService.saveVideoBoomarks(this.bookmarks); */
     }
   }
 
@@ -34,7 +35,7 @@ export class BookmarksComponent implements OnInit {
   }
 
   getVideoBookmarks() {
-    this.bookmarks = this.videoStoringService.getVideoBoomarks();
+    /* this.bookmarks = this.videoPersistService.getVideoBoomarks(); */
   }
 
   ngOnInit(): void {
